@@ -28,24 +28,34 @@ struct SideMenu: View {
       //}
         
         NavigationView{
-            NavigationLink(destination: Text("Home")){ Label("Home", systemImage: "house")
-            }
-            NavigationLink(destination: Text("Profile")){ Label("Profile", systemImage: "person")
-            }
-            NavigationLink(destination: Text("Settings")){ Label("Settings", systemImage: "gear")
-            }
-        }.listStyle(SidebarListStyle())
-            .navigationTitle("Menu")
+            List{
+                
+                
+                NavigationLink(destination: HomeView()){ Label("Home", systemImage: "house")
+                }
+                NavigationLink(destination: Text("Profile")){ Label("Profile", systemImage: "person")
+                }
+                NavigationLink(destination: Text("Settings")){ Label("Settings", systemImage: "gear")
+                }
+            }.listStyle(SidebarListStyle()).padding(.top,65).frame(maxWidth: .infinity, alignment: .topLeading)
+                .edgesIgnoringSafeArea(.vertical)
+            
+            
+               
+            
+            Text("Select an item from the menu").frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+        }
         
-        Text("Select an item from the menu").frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-struct Home:View {
-    var body: some View {
-        Text("Home View")
-            .navigationTitle("Home")
-    }
-}
+//struct Home:View {
+ //   var body: some View {
+       // Text("Home View")
+          //  .navigationTitle("Home")
+     //   HomeView()
+  //  }
+//}
 struct Profile:View {
     var body: some View {
         Text("Profile View")
