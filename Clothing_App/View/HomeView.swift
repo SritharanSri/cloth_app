@@ -30,10 +30,10 @@ struct HomeView: View {
                 Image(systemName: "line.horizontal.3").frame(width: 30, height: 20, alignment: .leading)
                            
                         }
-                        
+            Spacer()
                         
                     }
-                Spacer()
+                
             }
         }
     

@@ -9,13 +9,16 @@ import SwiftUI
 
 struct SideMenuHeader: View {
     var body: some View {
-        Image(systemName: "person.circle.fill").imageScale(.large).foregroundStyle(.white).frame(width: 48, height: 48).background(.blue).clipShape(RoundedRectangle(cornerRadius: 10)).padding(.vertical)
-        
-        VStack(alignment: .leading, spacing: 6){
-            Text("Srikalaikshan").font(.subheadline)
+        HStack{
+            Image(systemName: "person.circle.fill").imageScale(.large).foregroundStyle(.white).frame(width: 48, height: 48).background(.blue).clipShape(RoundedRectangle(cornerRadius: 10)).padding(.vertical)
             
-            Text("ssrikalai2255@gmail.com").font(.footnote).tint(.gray)
+            VStack(alignment: .leading, spacing: 6){
+                Text("Srikalaikshan").font(.subheadline)
+                
+                Text("ssrikalai2255@gmail.com").font(.footnote).tint(.gray)
+            }
         }
+        
     }
 }
 
