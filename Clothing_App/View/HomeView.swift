@@ -11,6 +11,7 @@ struct Product: Identifiable {
     let name: String
     let price: Double
     let category: String
+    let description: String
 }
 
 struct HomeView: View {
@@ -48,6 +49,7 @@ struct HomeView: View {
                     VStack(spacing: 16) {
                         ForEach(filteredProducts) { product in
                             ProductView(product: product)
+                            
                         }
                     }
                     .padding(.vertical)
@@ -69,10 +71,10 @@ struct HomeView: View {
     }
 
     let products: [Product] = [
-        Product(name: "Product 1", price: 19.99, category: "Category 1"),
-        Product(name: "Product 2", price: 29.99, category: "Category 2"),
-        Product(name: "Product 3", price: 39.99, category: "Category 1"),
-        Product(name: "Product 4", price: 49.99, category: "Category 3"),
+        Product(name: "Product 1", price: 19.99, category: "Category 1", description: "Description"),
+        Product(name: "Product 2", price: 29.99, category: "Category 2", description: "Description"),
+        Product(name: "Product 3", price: 39.99, category: "Category 1", description: "Description"),
+        Product(name: "Product 4", price: 49.99, category: "Category 3", description: "Description"),
         // Add more products as needed
     ]
 }
@@ -94,8 +96,8 @@ struct ProductView: View {
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             .padding()
             VStack{
-                Image(systemName: "heart").frame(width: 40, height: 40).font(.system(size: 30)).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                Image(systemName: "plus.circle").frame(width: 40, height: 40).font(.system(size: 30))
+                Image(systemName: "heart").font(.system(size: 20)).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                Image(systemName: "plus.circle").font(.system(size: 20))
                     .foregroundColor(.blue)
                     .padding()
             }
