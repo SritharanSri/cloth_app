@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8B03BE2BAECD6A0083B173 /* ClothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B03BD2BAECD6A0083B173 /* ClothView.swift */; };
 		25A3634B2BAE864000473874 /* Profile_settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A3634A2BAE864000473874 /* Profile_settings.swift */; };
 		4378164F2BA54D680067464A /* Clothing_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378164E2BA54D680067464A /* Clothing_AppApp.swift */; };
 		437816512BA54D680067464A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437816502BA54D680067464A /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E8B03BD2BAECD6A0083B173 /* ClothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothView.swift; sourceTree = "<group>"; };
 		25A3634A2BAE864000473874 /* Profile_settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile_settings.swift; sourceTree = "<group>"; };
 		4378164B2BA54D670067464A /* Clothing_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothing_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4378164E2BA54D680067464A /* Clothing_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_AppApp.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				4381AC1F2BAB514D00ABF749 /* SideMenu.swift */,
 				43E892D72BACADED00F28691 /* NotificationView.swift */,
 				25A3634A2BAE864000473874 /* Profile_settings.swift */,
+				0E8B03BD2BAECD6A0083B173 /* ClothView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				4378164F2BA54D680067464A /* Clothing_AppApp.swift in Sources */,
 				4381AC202BAB514E00ABF749 /* SideMenu.swift in Sources */,
 				4381AC1E2BAB31B900ABF749 /* HomeView.swift in Sources */,
+				0E8B03BE2BAECD6A0083B173 /* ClothView.swift in Sources */,
 				43A346D72BA9CAFE008A1E07 /* LogIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
