@@ -29,12 +29,17 @@ struct HomeView: View {
                     
                     Image(systemName: "bag").frame(width: 30, height: 20)
                     
-                    NavigationLink(destination: SideMenu(), label: {Image(systemName: "line.horizontal.3").frame(width: 30, height: 20, alignment: .leading)}).navigationTitle("Home").navigationBarHidden(true)
+                    Image(systemName: "line.horizontal.3").frame(width: 30, height: 20, alignment: .leading).onTapGesture {
+                        
+                        showMenu.toggle()
+                    }
                                
                             }
                 Spacer()
                             
-                        }
+            }.sheet(isPresented: $showMenu){
+                SideMenu()
+            }
         }
         
                 

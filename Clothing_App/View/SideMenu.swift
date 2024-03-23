@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SideMenu: View {
    // @Binding var isShowing: Bool
+    
     var body: some View {
        // ZStack{
          //   if isShowing{
@@ -33,8 +34,8 @@ struct SideMenu: View {
                 
                 NavigationLink(destination: HomeView()){ Label("Home", systemImage: "house")
                 }
-                NavigationLink(destination: Text("Profile")){ Label("Profile", systemImage: "person")
-                }
+                NavigationLink(destination: Profile_settings()){ Label("Profile", systemImage: "person")
+                }.navigationBarBackButtonHidden()
                 NavigationLink(destination: Text("Settings")){ Label("Settings", systemImage: "gear")
                 }
             }.listStyle(SidebarListStyle()).padding(.top,65).frame(maxWidth: .infinity, alignment: .topLeading)
