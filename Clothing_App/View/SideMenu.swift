@@ -8,69 +8,97 @@
 import SwiftUI
 
 struct SideMenu: View {
-   // @Binding var isShowing: Bool
+    @Binding var isShowing: Bool
+    //@State private var searchActive = false
+    @State private var backgroundColor = Color.white
     
     var body: some View {
-       // ZStack{
-         //   if isShowing{
-           //     Rectangle().opacity(0.03).ignoresSafeArea().onTapGesture {
-             //       isShowing.toggle()
-               // }
-       //         HStack{
-         //           VStack(alignment: .leading,spacing: 32){
-           //             SideMenuHeader()
-                        
-             //           Spacer()
-               //     }.background(.white).frame(width: 278, alignment: .trailing)
-                    
-                 //   Spacer()
-      //          }
-        //  }
-      //}
-        
-        NavigationView{
-            List{
+        VStack {
+            VStack(alignment: .leading, spacing: 32) {
+                SideMenuHeader(isShowing: $isShowing)
                 
+                Spacer()
                 
-                NavigationLink(destination: HomeView()){ Label("Home", systemImage: "house")
+                Button(action: {
+                    isShowing = false
+                }) {
+                    HStack {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(
+                       /* ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.gray, lineWidth: 1)
+                            if searchActive {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color(.sRGB, red: 240/255, green: 240/255, blue: 240/255, opacity: 1))
+                            }
+                        }
+                        */
+                    )
                 }
-                NavigationLink(destination: Profile_settings()){ Label("Profile", systemImage: "person")
-                }.navigationBarBackButtonHidden()
-                NavigationLink(destination: Text("Settings")){ Label("Settings", systemImage: "gear")
+                
+                Button(action: {
+                    isShowing = false
+                }) {
+                    HStack {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.gray, lineWidth: 1)
+                           /* if searchActive {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color(.sRGB, red: 240/255, green: 240/255, blue: 240/255, opacity: 1))
+                            }*/
+                        }
+                    )
                 }
-            }.listStyle(SidebarListStyle()).padding(.top,65).frame(maxWidth: .infinity, alignment: .topLeading)
-                .edgesIgnoringSafeArea(.vertical)
-            
-            
-               
-            
-            Text("Select an item from the menu").frame(maxWidth: .infinity, maxHeight: .infinity)
-            
+            }
+            .padding()
+            .background(
+                ZStack {
+                    backgroundColor
+                    LinearGradient(
+                        gradient: Gradient(colors: [.white.opacity(0.8), .clear]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                    .frame(height: 100)
+                }
+            )
+            .cornerRadius(10)
+            .shadow(radius: 10)
+            .frame(width: 278, alignment: .trailing)
+            .animation(.spring())
+            .onAppear {
+                backgroundColor = Color(.white)
+            }
+         /*   .onChange(of: searchActive) { newValue in
+                if newValue {
+                    backgroundColor = Color(.sRGB, red: 240/255, green: 240/255, blue: 240/255, opacity: 1)
+                } else {
+                    backgroundColor = Color(.white)
+                }
+            }
+            .offset(y: isShowing ? 0 : -278)*/
         }
-        
     }
+    
+    
 }
-//struct Home:View {
- //   var body: some View {
-       // Text("Home View")
-          //  .navigationTitle("Home")
-     //   HomeView()
-  //  }
-//}
-struct Profile:View {
-    var body: some View {
-        Text("Profile View")
-            .navigationTitle("Profile")
-    }
-}
-struct Settings:View {
-    var body: some View {
-        Text("Settings View")
-            .navigationTitle("Settings")
-    }
-}
+
 struct SideMenu_Previews: PreviewProvider {
+    
     static var previews: some View {
-        SideMenu()
+        HomeView()
     }
 }
+

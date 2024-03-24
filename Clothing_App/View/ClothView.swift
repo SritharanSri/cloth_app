@@ -89,10 +89,10 @@ struct ClothView: View {
         // Provide your related products here
         return [
             
-            Product(name: "Related Product 1", price: 29.99, category: "Good", description: "Description"),
-            Product(name: "Related Product 2", price: 39.99, category: "Good", description: "Description"),
-            Product(name: "Related Product 3", price: 49.99, category: "Bad", description: "Description"),
-            Product(name: "Related Product 4", price: 59.99, category: "Exelent", description: "Description")
+            Product(name: "Related Product 1", price: 29.99, category: "Good", description: "Description", imageName: ""),
+            Product(name: "Related Product 2", price: 39.99, category: "Good", description: "Description", imageName: ""),
+            Product(name: "Related Product 3", price: 49.99, category: "Bad", description: "Description", imageName: ""),
+            Product(name: "Related Product 4", price: 59.99, category: "Exelent", description: "Description", imageName: "")
         ]
     }
 }
@@ -126,7 +126,7 @@ struct RelatedProductView: View {
 // Usage
 struct ClothContentView: View {
     var body: some View {
-        let product = Product(name: "Product 1", price: 49.99, category: "Good", description: "This dress is made of high-quality fabric and is perfect for any occasion.")
+        let product = Product(name: "Product 1", price: 49.99, category: "Good", description: "This dress is made of high-quality fabric and is perfect for any occasion.", imageName: "")
         // Create an instance of Product, not ProductDetails
         ClothView(product: product) // Pass the product instance to ClothView
     }

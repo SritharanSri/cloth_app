@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E8B03BE2BAECD6A0083B173 /* ClothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B03BD2BAECD6A0083B173 /* ClothView.swift */; };
 		25A3634B2BAE864000473874 /* Profile_settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A3634A2BAE864000473874 /* Profile_settings.swift */; };
+		43056D1E2BB057A700E2F405 /* SideMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43056D1D2BB057A700E2F405 /* SideMenuHeader.swift */; };
 		4378164F2BA54D680067464A /* Clothing_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378164E2BA54D680067464A /* Clothing_AppApp.swift */; };
 		437816512BA54D680067464A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437816502BA54D680067464A /* ContentView.swift */; };
 		437816532BA54D740067464A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437816522BA54D740067464A /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		4381AC202BAB514E00ABF749 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381AC1F2BAB514D00ABF749 /* SideMenu.swift */; };
 		43A346D52BA9CAE7008A1E07 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A346D42BA9CAE7008A1E07 /* SignUp.swift */; };
 		43A346D72BA9CAFE008A1E07 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A346D62BA9CAFE008A1E07 /* LogIn.swift */; };
-		43E892D82BACADED00F28691 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E892D72BACADED00F28691 /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0E8B03BD2BAECD6A0083B173 /* ClothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothView.swift; sourceTree = "<group>"; };
 		25A3634A2BAE864000473874 /* Profile_settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile_settings.swift; sourceTree = "<group>"; };
+		43056D1D2BB057A700E2F405 /* SideMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeader.swift; sourceTree = "<group>"; };
 		4378164B2BA54D670067464A /* Clothing_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothing_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4378164E2BA54D680067464A /* Clothing_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_AppApp.swift; sourceTree = "<group>"; };
 		437816502BA54D680067464A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		4381AC1F2BAB514D00ABF749 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		43A346D42BA9CAE7008A1E07 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		43A346D62BA9CAFE008A1E07 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
-		43E892D72BACADED00F28691 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +151,9 @@
 				43A346D62BA9CAFE008A1E07 /* LogIn.swift */,
 				4381AC1D2BAB31B900ABF749 /* HomeView.swift */,
 				4381AC1F2BAB514D00ABF749 /* SideMenu.swift */,
-				43E892D72BACADED00F28691 /* NotificationView.swift */,
 				25A3634A2BAE864000473874 /* Profile_settings.swift */,
 				0E8B03BD2BAECD6A0083B173 /* ClothView.swift */,
+				43056D1D2BB057A700E2F405 /* SideMenuHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,8 +304,8 @@
 			files = (
 				437816512BA54D680067464A /* ContentView.swift in Sources */,
 				43A346D52BA9CAE7008A1E07 /* SignUp.swift in Sources */,
+				43056D1E2BB057A700E2F405 /* SideMenuHeader.swift in Sources */,
 				25A3634B2BAE864000473874 /* Profile_settings.swift in Sources */,
-				43E892D82BACADED00F28691 /* NotificationView.swift in Sources */,
 				4378164F2BA54D680067464A /* Clothing_AppApp.swift in Sources */,
 				4381AC202BAB514E00ABF749 /* SideMenu.swift in Sources */,
 				4381AC1E2BAB31B900ABF749 /* HomeView.swift in Sources */,

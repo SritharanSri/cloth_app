@@ -13,8 +13,13 @@ struct Profile_settings: View {
     @State private var phoneNumber = "076-679-1679"
     @State private var isEditing = true
     @State private var profileImage: Image? = Image(systemName: "person.circle.fill")
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack {
+            
+                        Button("Go back") {
+                            dismiss()
+                        }
                     Color(.systemGroupedBackground)
                         .edgesIgnoringSafeArea(.all)
                     
@@ -86,6 +91,8 @@ struct Profile_settings: View {
 
     
 
-#Preview {
-    Profile_settings()
+struct Profile_settings_Previews: PreviewProvider {
+    static var previews: some View {
+        Profile_settings()
+    }
 }
