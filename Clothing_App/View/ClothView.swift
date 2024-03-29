@@ -6,126 +6,78 @@
 //
 
 import SwiftUI
-// Add custom colors for better visuals
-import SwiftUI
 
-// Sample data
-let products: [ProductDetails] = [
-    ProductDetails(name: "Product 1", description: "Description", price: 49.99, imageName: "product1", category: ""),
-    ProductDetails(name: "Product 2", description: "Description", price: 59.99, imageName: "product2", category: ""),
-    ProductDetails(name: "Product 3", description: "Description", price: 69.99, imageName: "product3", category: ""),
-]
-
-let relatedProducts: [ProductDetails] = [
-    ProductDetails(name: "Related Product 1", description: "Description", price: 29.99, imageName: "related1", category: ""),
-    ProductDetails(name: "Related Product 2", description: "Description", price: 39.99, imageName: "related2", category: ""),
-]
-
-struct ProductDetails: Identifiable {
-    var id = UUID()
-    var name: String
-    var description: String
-    var price: Double
-    var imageName: String
-    var category: String
-}
 
 struct ClothView: View {
-    let product: ProductDetails
-
+    let images = ["view", "View2"]
     var body: some View {
-        VStack(spacing: 20) {
-            // Product image
-            Image(product.imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity)
-                .padding(.top)
-
-            // Product details
-            VStack(alignment: .leading, spacing: 10) {
-                Text(product.name)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.bottom)
-
-                Text(product.description)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .padding(.bottom)
-
-                Text("$\(product.price)")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.blue)
-                    .padding(.bottom)
-
-                Button(action: {
-                    // Add to cart action
-                }) {
-                    Text("Add to Cart")
+        VStack {
+            HStack{
+                
+                    Image(systemName: "chevron.left")
+                    .frame(width: 50,height: 50).background(Color.white).cornerRadius(10)
+                Spacer()
+                
+                Text("Product Details").font(.title2).offset(x:-100)
+                
+            }.padding()
+            Spacer()
+            ScrollView(.horizontal){
+                HStack(spacing: 0) {
+                                ForEach(images, id: \.self) { imageName in
+                                    Image(imageName)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: UIScreen.main.bounds.width) // Adjust frame to screen width
+                                }
+                            }
+                Spacer()
+            }.edgesIgnoringSafeArea(.horizontal)
+            VStack(spacing: 4){
+                HStack(spacing: 190){
+                    Text("Hoody").font(.title)
+                    Text("$499").font(.title)
+                }
+                
+                Text("Description").font(.subheadline).offset(x:-130)
+                Text("Over the years, hoodies have evolved in design, with various styles, colors, and patterns available to suit different preferences and fashion trends.").font(.body).padding(.leading,7).padding(.trailing,-5)
+                Spacer()
+            }.padding()
+            HStack{
+                Button(action:{
+                    //Code
+                } ){
+                    Text("Add Cart").font(.system(size: 20))
                         .foregroundColor(.white)
                         .padding()
-                        .frame(maxWidth: .infinity)
+                        .frame(width: 180, height: 50)
+                        .background(Color.gray)
+                        .cornerRadius(10)
+                }
+                Button(action:{
+                    //Code
+                } ){
+                    Text("Buy").font(.system(size: 20))
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 180, height: 50)
                         .background(Color.blue)
-                        .cornerRadius(8)
+                        .cornerRadius(10)
                 }
-                .padding(.bottom)
-            }
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.systemGray5))
-            )
-            .padding(.horizontal)
-
-            // Related Products
-            ScrollView(.horizontal) {
-                LazyHGrid(rows: [GridItem(.adaptive(minimum: 150))]) {
-                    ForEach(relatedProducts) { product in
-                        RelatedProductView(product: product)
-                    }
-                }
-                .padding(.horizontal)
-            }
-            .frame(height: 200)
+            }.offset(y: -50)
+           
+           
+            
+            
+            
         }
-        .navigationTitle("Clothing Detail")
     }
 }
-
-struct RelatedProductView: View {
-    let product: ProductDetails
-
-    var body: some View {
-        VStack(spacing: 10) {
-            Image(product.imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-                .cornerRadius(8)
-
-            Text(product.name)
-                .font(.headline)
-                .fontWeight(.bold)
-
-            Text("$\(product.price)")
-                .font(.subheadline)
-                .foregroundColor(.blue)
-        }
-        .padding()
-        .background(Color(.systemBackground))
-        .cornerRadius(8)
-        .shadow(radius: 4)
-    }
-}
-
 // Usage
 struct ClothContentView: View {
     var body: some View {
-        let product = ProductDetails(name: "Product 1", description: "Description", price: 49.99, imageName: "product1", category: "")
-        ClothView(product: product)
+        
+        ClothView()
     }
 }
 

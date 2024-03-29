@@ -17,10 +17,10 @@ struct CartView: View {
                 HStack{
                     
                         Image(systemName: "chevron.left")
-                        .frame(width: 50,height: 50).background(Color.gray).cornerRadius(10)
+                        .frame(width: 50,height: 50)
                     Spacer()
                     
-                    Text("Cart Details").font(.title2)
+                    Text("Cart Details").font(.title2).offset(x:-30)
                     Spacer()
                 }.padding()
             }

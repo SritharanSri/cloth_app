@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct Clothing_AppApp: App {
+    @ObservedObject var locationManager = LocationManager.shared
     var body: some Scene {
         WindowGroup {
-            CartView()
+          /*  if locationManager.userLocation == nil {
+            LocationView()
+            } else {
+           HomeView()
+            }*/
+            PaymentView()
         }
     }
 }

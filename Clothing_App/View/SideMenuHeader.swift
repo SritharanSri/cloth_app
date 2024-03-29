@@ -14,17 +14,20 @@ struct SideMenuHeader: View {
 
     var body: some View {
         HStack {
-            Image(systemName: "person")
-            Text("Srikalai")
-                .font(.title)
-                .fontWeight(.bold)
-
-            Spacer()
-
-            Image(systemName: "xmark")
-                .onTapGesture {
-                    isShowing = false
-                }
+          Image("Avatar").resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .padding(.bottom, 20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 200)
+                        .stroke(Color.gray, lineWidth: 1).padding(.bottom, 20)
+                )
+            VStack(spacing: 4){
+                Text("SriKalai").offset(x: -40)
+                Text("ssrikalai2255@gmail.com").font(.system(size: 12))
+            }.offset(y: -10)
+            
         }
         .padding()
         .foregroundColor(.black)
