@@ -9,9 +9,6 @@ import SwiftUI
 
 struct SideMenuHeader: View {
     @Binding var isShowing: Bool
-      
-    
-
     var body: some View {
         HStack {
           Image("Avatar").resizable()

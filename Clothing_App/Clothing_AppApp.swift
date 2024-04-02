@@ -17,7 +17,7 @@ struct Clothing_AppApp: App {
             } else {
            HomeView()
             }*/
-            PaymentView()
+            HomeView()
         }
     }
 }

@@ -9,14 +9,15 @@ import SwiftUI
 
 
 struct ClothView: View {
+    let productID: String
     let images = ["view", "View2"]
     var body: some View {
         VStack {
             HStack{
                 
-                    Image(systemName: "chevron.left")
+                   /* Image(systemName: "chevron.left")
                     .frame(width: 50,height: 50).background(Color.white).cornerRadius(10)
-                Spacer()
+                Spacer()*/
                 
                 Text("Product Details").font(.title2).offset(x:-100)
                 
@@ -77,7 +78,7 @@ struct ClothView: View {
 struct ClothContentView: View {
     var body: some View {
         
-        ClothView()
+        ClothView(productID: "")
     }
 }
 

@@ -17,14 +17,17 @@
 		437816602BA54D760067464A /* Clothing_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378165F2BA54D760067464A /* Clothing_AppTests.swift */; };
 		4378166A2BA54D760067464A /* Clothing_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437816692BA54D760067464A /* Clothing_AppUITests.swift */; };
 		4378166C2BA54D760067464A /* Clothing_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378166B2BA54D760067464A /* Clothing_AppUITestsLaunchTests.swift */; };
+		437E99C72BB7DEDE001DD52F /* Product detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E99C62BB7DEDE001DD52F /* Product detail.swift */; };
 		4381AC1E2BAB31B900ABF749 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381AC1D2BAB31B900ABF749 /* HomeView.swift */; };
 		4381AC202BAB514E00ABF749 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381AC1F2BAB514D00ABF749 /* SideMenu.swift */; };
 		4389982F2BB6D3A600E7E60E /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389982E2BB6D3A600E7E60E /* LocationView.swift */; };
 		438998312BB6E73B00E7E60E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438998302BB6E73B00E7E60E /* LocationManager.swift */; };
 		439143ED2BB2E656001C85E5 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439143EC2BB2E656001C85E5 /* CartView.swift */; };
 		4398AE992BB69AD400690930 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4398AE982BB69AD400690930 /* PaymentView.swift */; };
+		43A082DD2BB9180400449C10 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A082DC2BB9180400449C10 /* ProductViewModel.swift */; };
 		43A346D52BA9CAE7008A1E07 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A346D42BA9CAE7008A1E07 /* SignUp.swift */; };
 		43A346D72BA9CAFE008A1E07 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A346D62BA9CAFE008A1E07 /* LogIn.swift */; };
+		43D13D092BBAE629004B8A20 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D13D082BBAE629004B8A20 /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +61,14 @@
 		437816652BA54D760067464A /* Clothing_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Clothing_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		437816692BA54D760067464A /* Clothing_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_AppUITests.swift; sourceTree = "<group>"; };
 		4378166B2BA54D760067464A /* Clothing_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		437E99C62BB7DEDE001DD52F /* Product detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product detail.swift"; path = "Clothing_App/View/Product detail.swift"; sourceTree = SOURCE_ROOT; };
 		4381AC1D2BAB31B900ABF749 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4381AC1F2BAB514D00ABF749 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		4389982E2BB6D3A600E7E60E /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		438998302BB6E73B00E7E60E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Clothing_App/View/LocationManager.swift; sourceTree = SOURCE_ROOT; };
 		439143EC2BB2E656001C85E5 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		4398AE982BB69AD400690930 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		43A082DC2BB9180400449C10 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductViewModel.swift; path = Clothing_App/View/ProductViewModel.swift; sourceTree = SOURCE_ROOT; };
 		43A346D42BA9CAE7008A1E07 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		43A346D62BA9CAFE008A1E07 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D13D092BBAE629004B8A20 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +178,7 @@
 		43A346D22BA9CA7B008A1E07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				437E99C62BB7DEDE001DD52F /* Product detail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				438998302BB6E73B00E7E60E /* LocationManager.swift */,
+				43A082DC2BB9180400449C10 /* ProductViewModel.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -200,6 +208,9 @@
 			dependencies = (
 			);
 			name = Clothing_App;
+			packageProductDependencies = (
+				43D13D082BBAE629004B8A20 /* URLImage */,
+			);
 			productName = Clothing_App;
 			productReference = 4378164B2BA54D670067464A /* Clothing_App.app */;
 			productType = "com.apple.product-type.application";
@@ -272,6 +283,9 @@
 				Base,
 			);
 			mainGroup = 437816422BA54D670067464A;
+			packageReferences = (
+				43D13D072BBAE629004B8A20 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 4378164C2BA54D670067464A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -323,10 +337,12 @@
 				25A3634B2BAE864000473874 /* Profile_settings.swift in Sources */,
 				4378164F2BA54D680067464A /* Clothing_AppApp.swift in Sources */,
 				4381AC202BAB514E00ABF749 /* SideMenu.swift in Sources */,
+				437E99C72BB7DEDE001DD52F /* Product detail.swift in Sources */,
 				4381AC1E2BAB31B900ABF749 /* HomeView.swift in Sources */,
 				0E8B03BE2BAECD6A0083B173 /* ClothView.swift in Sources */,
 				43A346D72BA9CAFE008A1E07 /* LogIn.swift in Sources */,
 				438998312BB6E73B00E7E60E /* LocationManager.swift in Sources */,
+				43A082DD2BB9180400449C10 /* ProductViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +663,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43D13D072BBAE629004B8A20 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43D13D082BBAE629004B8A20 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D13D072BBAE629004B8A20 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 437816432BA54D670067464A /* Project object */;
 }

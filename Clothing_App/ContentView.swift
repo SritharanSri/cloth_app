@@ -8,51 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var username=""
-    @State var password=""
+    @ObservedObject var locationManager = LocationManager.shared
     var body: some View {
-        ZStack {
-            Image("Login")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .cornerRadius(10)
+        Group{
+            if locationManager.userLocation == nil {
+            LocationView()
+            } else if let location = locationManager.userLocation {
+                Text("\(location)")
                 .padding()
-        
-            VStack{
-                Text("LOGIN").font(.largeTitle).bold().padding()
-                HStack{
-                    Image(systemName: "person")
-                    TextField("Login Name",text: $username)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                        
-                }
-                HStack{
-                    Image(systemName: "lock")
-                    SecureField("Password",text: $password)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                }
-                HStack{
-                    Button("LOGIN"){
-                        //
-                    }.foregroundColor(.white)
-                        .frame(width: 250,height: 40)
-                        .background(Color.purple)
-                        .cornerRadius(10)
-                }.padding()
-                
-                HStack{
-                    Text("Create an account?").font(.system(size: 15))
-                    Text("SIGN UP").foregroundColor(.blue).font(.system(size: 15))
-                }
-            }.frame(width: 350, height: 300).background(Color.white).shadow(radius: 50).cornerRadius(20)
+            }
         }
-        .padding()
     }
 }
 

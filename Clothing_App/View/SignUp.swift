@@ -62,7 +62,7 @@ struct SignUp: View {
                             //
                         }.foregroundColor(.white)
                             .frame(width: 250,height: 40)
-                            .background(Color.purple)
+                            .background(Color.blue)
                             .cornerRadius(10)
                     }.padding()
                     

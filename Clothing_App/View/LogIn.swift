@@ -10,6 +10,7 @@ import SwiftUI
 struct LogIn: View {
     @State var username=""
     @State var password=""
+    @State private var isNavigationActive = false
     var body: some View {
         NavigationView{
             ZStack {
@@ -39,19 +40,21 @@ struct LogIn: View {
                             .cornerRadius(10)
                     }
                     HStack{
-                        Button("LOGIN"){
-                        //
-                        }.foregroundColor(.white)
-                            .frame(width: 250,height: 40)
-                            .background(Color.purple)
-                            .cornerRadius(10)
+                        NavigationLink(destination: HomeView(), isActive: $isNavigationActive) {
+                            Button("LOGIN"){
+                                //
+                            }.foregroundColor(.white)
+                                .frame(width: 250,height: 40)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                        }.navigationBarBackButtonHidden(true)
                     }.padding()
                     
                     
                     HStack{
                         Text("Create an account?").font(.system(size: 15))
                         
-                        NavigationLink(destination: SignUp(), label: {Text("SIGN UP").foregroundColor(.blue).font(.system(size:15))}).navigationBarBackButtonHidden()
+                        NavigationLink(destination: SignUp(), label: {Text("SIGN UP").foregroundColor(.blue).font(.system(size:15))}).navigationBarBackButtonHidden(true)
                         // Text("SIGN UP").foregroundColor(.blue).font(.system(size:15))
                     }.padding()
                 }.frame(width: 350, height: 300).background(Color.white).shadow(radius: 50).cornerRadius(20)
