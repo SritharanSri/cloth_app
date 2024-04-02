@@ -61,14 +61,14 @@
 		437816652BA54D760067464A /* Clothing_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Clothing_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		437816692BA54D760067464A /* Clothing_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_AppUITests.swift; sourceTree = "<group>"; };
 		4378166B2BA54D760067464A /* Clothing_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		437E99C62BB7DEDE001DD52F /* Product detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product detail.swift"; path = "Clothing_App/View/Product detail.swift"; sourceTree = SOURCE_ROOT; };
+		437E99C62BB7DEDE001DD52F /* Product detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product detail.swift"; path = "Clothing_App/Model/Product detail.swift"; sourceTree = SOURCE_ROOT; };
 		4381AC1D2BAB31B900ABF749 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4381AC1F2BAB514D00ABF749 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		4389982E2BB6D3A600E7E60E /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		438998302BB6E73B00E7E60E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Clothing_App/View/LocationManager.swift; sourceTree = SOURCE_ROOT; };
+		438998302BB6E73B00E7E60E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Clothing_App/ViewModel/LocationManager.swift; sourceTree = SOURCE_ROOT; };
 		439143EC2BB2E656001C85E5 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		4398AE982BB69AD400690930 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
-		43A082DC2BB9180400449C10 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductViewModel.swift; path = Clothing_App/View/ProductViewModel.swift; sourceTree = SOURCE_ROOT; };
+		43A082DC2BB9180400449C10 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductViewModel.swift; path = Clothing_App/ViewModel/ProductViewModel.swift; sourceTree = SOURCE_ROOT; };
 		43A346D42BA9CAE7008A1E07 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		43A346D62BA9CAFE008A1E07 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,8 +122,8 @@
 		4378164D2BA54D670067464A /* Clothing_App */ = {
 			isa = PBXGroup;
 			children = (
-				43A346D32BA9CA83008A1E07 /* ModelView */,
-				43A346D22BA9CA7B008A1E07 /* Model */,
+				43C2987F2BBC66640042433F /* Model */,
+				43C2987E2BBC66490042433F /* ViewModel */,
 				43A346D12BA9CA74008A1E07 /* View */,
 				4378164E2BA54D680067464A /* Clothing_AppApp.swift */,
 				437816502BA54D680067464A /* ContentView.swift */,
@@ -175,21 +175,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		43A346D22BA9CA7B008A1E07 /* Model */ = {
+		43C2987E2BBC66490042433F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				43A082DC2BB9180400449C10 /* ProductViewModel.swift */,
+				438998302BB6E73B00E7E60E /* LocationManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		43C2987F2BBC66640042433F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				437E99C62BB7DEDE001DD52F /* Product detail.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		43A346D32BA9CA83008A1E07 /* ModelView */ = {
-			isa = PBXGroup;
-			children = (
-				438998302BB6E73B00E7E60E /* LocationManager.swift */,
-				43A082DC2BB9180400449C10 /* ProductViewModel.swift */,
-			);
-			path = ModelView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
