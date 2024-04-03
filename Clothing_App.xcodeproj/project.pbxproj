@@ -27,6 +27,8 @@
 		43A082DD2BB9180400449C10 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A082DC2BB9180400449C10 /* ProductViewModel.swift */; };
 		43A346D52BA9CAE7008A1E07 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A346D42BA9CAE7008A1E07 /* SignUp.swift */; };
 		43A346D72BA9CAFE008A1E07 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A346D62BA9CAFE008A1E07 /* LogIn.swift */; };
+		43B7EE392BBDA245005F0318 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EE382BBDA244005F0318 /* CartModel.swift */; };
+		43B7EE3B2BBDA334005F0318 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EE3A2BBDA334005F0318 /* CartViewModel.swift */; };
 		43D13D092BBAE629004B8A20 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D13D082BBAE629004B8A20 /* URLImage */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		43A082DC2BB9180400449C10 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductViewModel.swift; path = Clothing_App/ViewModel/ProductViewModel.swift; sourceTree = SOURCE_ROOT; };
 		43A346D42BA9CAE7008A1E07 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		43A346D62BA9CAFE008A1E07 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
+		43B7EE382BBDA244005F0318 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		43B7EE3A2BBDA334005F0318 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 			children = (
 				43A082DC2BB9180400449C10 /* ProductViewModel.swift */,
 				438998302BB6E73B00E7E60E /* LocationManager.swift */,
+				43B7EE3A2BBDA334005F0318 /* CartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				437E99C62BB7DEDE001DD52F /* Product detail.swift */,
+				43B7EE382BBDA244005F0318 /* CartModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +339,8 @@
 				4398AE992BB69AD400690930 /* PaymentView.swift in Sources */,
 				437816512BA54D680067464A /* ContentView.swift in Sources */,
 				43A346D52BA9CAE7008A1E07 /* SignUp.swift in Sources */,
+				43B7EE392BBDA245005F0318 /* CartModel.swift in Sources */,
+				43B7EE3B2BBDA334005F0318 /* CartViewModel.swift in Sources */,
 				43056D1E2BB057A700E2F405 /* SideMenuHeader.swift in Sources */,
 				25A3634B2BAE864000473874 /* Profile_settings.swift in Sources */,
 				4378164F2BA54D680067464A /* Clothing_AppApp.swift in Sources */,
