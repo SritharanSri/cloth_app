@@ -29,6 +29,7 @@
 		43A346D72BA9CAFE008A1E07 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A346D62BA9CAFE008A1E07 /* LogIn.swift */; };
 		43B7EE392BBDA245005F0318 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EE382BBDA244005F0318 /* CartModel.swift */; };
 		43B7EE3B2BBDA334005F0318 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EE3A2BBDA334005F0318 /* CartViewModel.swift */; };
+		43B93BE12BC1789F00161ADF /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B93BE02BC1789F00161ADF /* ProfileModel.swift */; };
 		43D13D092BBAE629004B8A20 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D13D082BBAE629004B8A20 /* URLImage */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		43A346D62BA9CAFE008A1E07 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		43B7EE382BBDA244005F0318 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		43B7EE3A2BBDA334005F0318 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		43B93BE02BC1789F00161ADF /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			children = (
 				437E99C62BB7DEDE001DD52F /* Product detail.swift */,
 				43B7EE382BBDA244005F0318 /* CartModel.swift */,
+				43B93BE02BC1789F00161ADF /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				43B7EE3B2BBDA334005F0318 /* CartViewModel.swift in Sources */,
 				43056D1E2BB057A700E2F405 /* SideMenuHeader.swift in Sources */,
 				25A3634B2BAE864000473874 /* Profile_settings.swift in Sources */,
+				43B93BE12BC1789F00161ADF /* ProfileModel.swift in Sources */,
 				4378164F2BA54D680067464A /* Clothing_AppApp.swift in Sources */,
 				4381AC202BAB514E00ABF749 /* SideMenu.swift in Sources */,
 				437E99C72BB7DEDE001DD52F /* Product detail.swift in Sources */,
@@ -437,6 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -491,6 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

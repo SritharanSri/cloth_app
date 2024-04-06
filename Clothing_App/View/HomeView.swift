@@ -90,7 +90,14 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Button(action: {}) {
+                        /*Button(action: {}) {
+                            Image(systemName: "bag")
+                                .resizable()
+                                .frame(width: 22, height: 22)
+                                .foregroundColor(.gray)
+                        }
+                        .padding(.leading, 10)*/
+                        NavigationLink(destination: CartView()) {
                             Image(systemName: "bag")
                                 .resizable()
                                 .frame(width: 22, height: 22)
@@ -100,6 +107,7 @@ struct HomeView: View {
                         
                         Button(action: {
                             sideMenuIsShowing.toggle()
+                            print("sideMenuIsShowing toggled to \(sideMenuIsShowing)")
                         }) {
                             Image(systemName: "line.horizontal.3")
                                 .resizable()
@@ -185,13 +193,20 @@ struct HomeView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity) // Fill available space with ScrollView
-            
-            if sideMenuIsShowing {
+            .overlay(
+                        Group {
+                            if sideMenuIsShowing {
+                                Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+                                 SideMenu(isShowing: $sideMenuIsShowing, isCart: false, isProfile: false)
+                            }
+                        }
+                    )
+        /*    if sideMenuIsShowing {
                 SideMenu(isShowing: $sideMenuIsShowing)
                     .frame(width: 278)
                     .transition(.move(edge: .trailing))
-                    .animation(.default)
-            }
+                    
+            }*/
         }
     }
 }

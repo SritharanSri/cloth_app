@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SideMenu: View {
     @Binding var isShowing: Bool
+    @State var isCart: Bool
+    @State var isProfile: Bool
     @State private var backgroundColor = Color.white
     
     var body: some View {
@@ -18,7 +20,7 @@ struct SideMenu: View {
                 
                 Spacer()
                 
-                Button(action: {
+               /* Button(action: {
                     isShowing = false
                 }) {
                     HStack {
@@ -27,8 +29,15 @@ struct SideMenu: View {
                     }
                     .padding()
                     .foregroundColor(.black)
-                    .background()
-                }.offset(y: -500)
+                    .background()*/
+                NavigationLink(destination: Profile_settings(), isActive: $isProfile) {
+                    HStack {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+                    .padding()
+                    .foregroundColor(.black)
+                }.offset(y: -480)
                 
                 Button(action: {
                     isShowing = false
@@ -40,7 +49,27 @@ struct SideMenu: View {
                     .padding()
                     .foregroundColor(.black)
                     
-                }.offset(y:-490)
+                }.offset(y:-480)
+               /* Button(action: {
+                    isShowing = false
+                }) {
+                    HStack {
+                        Image(systemName: "bag")
+                        Text("Add Cart")
+                    }
+                    .padding()
+                    .foregroundColor(.black)*/
+                NavigationLink(destination: CartView(), isActive: $isCart) {
+                    HStack {
+                        Image(systemName: "bag")
+                        Text("Add Cart")
+                    }
+                    .padding()
+                    .foregroundColor(.black)
+                
+                }.offset(y:-480)
+                
+                
             }
             .padding()
             .background(
