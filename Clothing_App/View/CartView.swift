@@ -7,142 +7,62 @@
 
 
 import SwiftUI
+import URLImage
+
 
 struct CartView: View {
+    @ObservedObject var cartViewModel = CartViewModel()
     @State private var itemCount = 1
     @State private var itemCount01 = 1
+    
     var body: some View {
-        VStack{
-            VStack{
-                    Text("Cart Details").font(.title2)
-            }
-            Spacer()
+        VStack {
+            Text("Cart Details")
+                .font(.title2)
+                .padding()
             
-            ScrollView{
-                VStack{
-                    HStack(spacing: 4){
-                        Image("T shirt").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 120).cornerRadius(25)
-                        VStack(spacing: 2){
-                            HStack{
-                                Text("Blue T-Shirt")
-                                Spacer()
-                                Text("$69.99").padding()
-                            }
-                            HStack{
-                                Text("Blue").font(.system(size: 14))
-                                    .foregroundColor(Color.gray)
-                                Spacer()
-                            }
-                            HStack {
-                                            Button(action: {
-                                                // Decrease item count
-                                                if itemCount > 1 {
-                                                    itemCount -= 1
-                                                }
-                                            }) {
-                                                Image(systemName: "minus.circle")
-                                            }
-                                            .padding()
-                                            Text("\(itemCount)")
-                                            Button(action: {
-                                                // Increase item count
-                                                itemCount += 1
-                                            }) {
-                                                Image(systemName: "plus.circle")
-                                            }
-                                            .padding()
-                                Spacer()
-                                        }
-                            HStack{
-                                Text("Remove").foregroundColor(.blue)
-                                Spacer()
-                            }
-                        }
-                    }
-                    VStack{
-                        Rectangle()
-                                   .frame(width: 350,height: 1)
-                                   .foregroundColor(Color.gray)
-                    }
-                    
-                    HStack(spacing: 4){
-                        Image("Shirt").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 120).cornerRadius(25)
-                        VStack(spacing: 2){
-                            HStack{
-                                Text("Shirt")
-                                Spacer()
-                                Text("$89.99").padding()
-                            }
-                            HStack{
-                                Text("Yellow").font(.system(size: 14))
-                                    .foregroundColor(Color.gray)
-                                Spacer()
-                            }
-                            HStack {
-                                            Button(action: {
-                                                // Decrease item count
-                                                if itemCount01 > 1 {
-                                                    itemCount01 -= 1
-                                                }
-                                            }) {
-                                                Image(systemName: "minus.circle")
-                                            }
-                                            .padding()
-                                            Text("\(itemCount01)")
-                                            Button(action: {
-                                                // Increase item count
-                                                itemCount01 += 1
-                                            }) {
-                                                Image(systemName: "plus.circle")
-                                            }
-                                            .padding()
-                                Spacer()
-                                        }
-                            HStack{
-                                Text("Remove").foregroundColor(.blue)
-                                Spacer()
-                            }
-                        }
-                    }
-                    VStack{
-                        Rectangle()
-                                   .frame(width: 350,height: 1)
-                                   .foregroundColor(Color.gray)
+            ScrollView {
+                VStack(spacing: 20) {
+                    ForEach(cartViewModel.cartItems) { cartItem in
+                        CartItemRow(cartItem: cartItem)
                     }
                 }
+                .padding()
             }
-            VStack{
-                HStack{
-                    Text("Order Information").font(.title2)
-                    Spacer()
-                }.padding()
+            
+            
+            VStack {
                 
-                HStack{
-                    Text("SubTotal").font(.system(size: 20))
+                Text("Order Information")
+                    .font(.title2)
+                    .padding()
+                
+                HStack {
+                    Text("SubTotal")
                     Spacer()
-                    Text("$160")
-                }.padding()
-                HStack{
-                    Text("Shipping").font(.system(size: 20))
+                    Text("$\(calculateSubtotal(), specifier: "%.2f")")
+                }
+                .padding()
+                
+                HStack {
+                    Text("Shipping")
                     Spacer()
                     Text("$20")
-                }.padding()
-                Rectangle()
-                           .frame(width: 380,height: 1)
-                           .foregroundColor(Color.gray)
-                HStack{
-                    Text("Total").font(.title)
-                    Spacer()
-                    Text("$180").font(.title)
-                }.padding()
-               
+                }
+                .padding()
                 
+                HStack {
+                    Text("Total")
+                    Spacer()
+                    Text("$\(calculateTotal(), specifier: "%.2f")")
+                        .font(.title)
+                }
+                .padding()
             }
+            
             Spacer()
             
-            Button(action:{
-                
-            }){
+            NavigationLink(destination: PaymentView(total:calculateTotal()) ) {
                 Text("Check Out")
                     .font(.system(size: 20))
                     .foregroundColor(.white)
@@ -151,13 +71,54 @@ struct CartView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
+            .padding()
+        }
+        .onAppear {
+            
+            cartViewModel.loadCartItemsFromLocalStorage()
+                      
         }
     }
-}
     
+    func calculateSubtotal() -> Double {
+        var subtotal = 0.0
+        for cartItem in cartViewModel.cartItems {
+            subtotal += cartItem.price * Double(cartItem.quantity)
+        }
+        return subtotal
+    }
+    
+    func calculateTotal() -> Double {
+        return calculateSubtotal() + 20
+    }
+}
+
+struct CartItemRow: View {
+    let cartItem: CartModel
+    
+    var body: some View {
+        VStack {
+            
+            URLImage(URL(string: cartItem.image)!) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 150)
+                    .cornerRadius(10)
+            }
+            Text(cartItem.product)
+            Text("Quantity: \(cartItem.quantity)")
+            Text("Price: $\(cartItem.price, specifier: "%.2f")")
+        }
+        .padding()
+        .background(Color.secondary.opacity(0.1))
+        .cornerRadius(10)
+    }
+}
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
     }
 }
+

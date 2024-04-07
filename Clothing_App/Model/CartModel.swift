@@ -6,16 +6,18 @@
 //
 
 import Foundation
-struct CartModel: Codable {
+struct CartModel: Codable, Identifiable {
+    let id = UUID() // Unique identifier for each CartModel instance
     let product: String // Assuming this is the product ID
-       let quantity: Int
+    let quantity: Int
     let price: Double
-       
+    let image: String
+    
     enum CodingKeys: String, CodingKey {
-        case product = "productId"
+        case product = "productName"
         case quantity
         case price
-        
+        case image
     }
 }
 

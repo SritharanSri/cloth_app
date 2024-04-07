@@ -72,7 +72,7 @@ struct HomeView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     
                 }
-                //.offset(y: -300) // Move this view up by adjusting its offset
+                
                 
                 ScrollView {
                     VStack(spacing: 16) {
@@ -121,16 +121,7 @@ struct HomeView: View {
                                                 .foregroundColor(.white)
                                                 .cornerRadius(5)
                                         }
-                                       /* NavigationLink(destination: CartView()) {
-                                            Text("Add to Cart")
-                                                .font(.caption2)
-                                                .bold()
-                                                .padding(.horizontal, 16)
-                                                .padding(.vertical, 8)
-                                                .background(Color(.systemBlue))
-                                                .foregroundColor(.white)
-                                                .cornerRadius(5)
-                                        }*/
+                                      
                                     }
                                     
                                 }
@@ -149,12 +140,7 @@ struct HomeView: View {
                             }
                         }
                     )
-        /*    if sideMenuIsShowing {
-                SideMenu(isShowing: $sideMenuIsShowing)
-                    .frame(width: 278)
-                    .transition(.move(edge: .trailing))
-                    
-            }*/
+       
         }
     }
 }

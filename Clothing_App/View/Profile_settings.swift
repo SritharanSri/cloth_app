@@ -21,7 +21,7 @@ struct Profile_settings: View {
     @State private var selectedImages: [UIImage] = []
        @State private var isShowingPicker = false
     let defaultImage = UIImage(named: "Avatar")
-    /* @Environment(\.dismiss) var dismiss*/
+    
     
     var body: some View {
         VStack{
@@ -46,7 +46,7 @@ struct Profile_settings: View {
                                                 )
                         }
                     } else{
-                        // Show default image when selectedImages is empty and selected gender is valid
+                        
                         Image(uiImage: defaultImage ?? UIImage())
                             .resizable()
                             .scaledToFit()
@@ -84,7 +84,7 @@ struct Profile_settings: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .overlay(
                                         RoundedRectangle(cornerRadius: 8)
-                                            .stroke(Color.gray, lineWidth: 1) // Border color and width
+                                            .stroke(Color.gray, lineWidth: 1)
                                     ).padding(.leading,20).padding(.trailing,20)
                 
                
@@ -98,7 +98,7 @@ struct Profile_settings: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .overlay(
                                             RoundedRectangle(cornerRadius: 8)
-                                                .stroke(Color.gray, lineWidth: 1) // Border color and width
+                                                .stroke(Color.gray, lineWidth: 1)
                                         ).padding(.leading,20).padding(.trailing,20)
                     Spacer()
                 }
@@ -112,7 +112,7 @@ struct Profile_settings: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .overlay(
                                             RoundedRectangle(cornerRadius: 8)
-                                                .stroke(Color.gray, lineWidth: 1) // Border color and width
+                                                .stroke(Color.gray, lineWidth: 1)
                                         ).padding(.leading,20).padding(.trailing,20)
                 Spacer()
                 }
@@ -125,7 +125,7 @@ struct Profile_settings: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .overlay(
                                                 RoundedRectangle(cornerRadius: 8)
-                                                    .stroke(Color.gray, lineWidth: 1) // Border color and width
+                                                    .stroke(Color.gray, lineWidth: 1)
                                             ).padding(.leading,20)
                                             
                                             VStack {
@@ -141,8 +141,8 @@ struct Profile_settings: View {
                                             }
                                             .cornerRadius(8)
                                             .shadow(radius: 2)
-                                            .opacity(isDropdownExpanded ? 1 : 0) // Set opacity based on expansion state
-                                            .animation(.easeInOut) // Add animation
+                                            .opacity(isDropdownExpanded ? 1 : 0)
+                                            .animation(.easeInOut)
                     }.padding(.leading,-15)
                                         .onTapGesture {
                                             isDropdownExpanded.toggle()
@@ -164,7 +164,7 @@ struct Profile_settings: View {
                                    
                                    .overlay(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.gray, lineWidth: 1) // Border color and width
+                                        .stroke(Color.gray, lineWidth: 1)
                                 )
                 }.offset(x:-50,y:-40)
                 
@@ -196,7 +196,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration()
         configuration.filter = .images
-        configuration.selectionLimit = 0 // Unlimited selection
+        configuration.selectionLimit = 0 
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = context.coordinator
         return picker

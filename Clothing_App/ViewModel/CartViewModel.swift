@@ -9,7 +9,21 @@ import Foundation
 class CartViewModel: ObservableObject {
     @Published var cartItems: [CartModel] = []
     
-    func getAllCartItems() {
+    
+    func loadCartItemsFromLocalStorage() {
+           if let savedCartData = UserDefaults.standard.data(forKey: "cartItems") {
+               let decoder = JSONDecoder()
+               if let loadedCartItems = try? decoder.decode([CartModel].self, from: savedCartData) {
+                   cartItems = loadedCartItems
+                   print(cartItems)
+               }
+           }
+       }
+    func saveCartItem(_ cartItem: CartModel) {
+           cartItems.append(cartItem)
+           
+       }
+   /* func getAllCartItems() {
         guard let url = URL(string: APIConstantsCart.getallURL) else {
             print("Invalid URL")
             return
@@ -29,9 +43,30 @@ class CartViewModel: ObservableObject {
                 print("Error fetching data: \(error)")
             }
         }.resume()
-    }
+    }*/
+    
+    func saveCartItemsToLocalStorage() {
+          let encoder = JSONEncoder()
+          if let encoded = try? encoder.encode(cartItems) {
+              UserDefaults.standard.set(encoded, forKey: "cartItems")
+          }
+      }
+    
+  /*  func saveCartItemToPhoneStorage(_ cartItem: CartModel) {
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(cartItem)
+            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let cartItemURL = documentsDirectory.appendingPathComponent("cartItem.json")
+            try data.write(to: cartItemURL)
+        
    
-    func saveCartItem(_ cartItem: CartModel) {
+   } catch {
+            print("Error saving cart item: \(error)")
+        }
+    }*/
+   
+   /* func saveCartItem(_ cartItem: CartModel) {
         guard let url = URL(string: APIConstantsCart.postURL) else {
             print("Invalid URL")
             return
@@ -59,7 +94,7 @@ class CartViewModel: ObservableObject {
         } catch {
             print("Error encoding cart item: \(error)")
         }
-    }
+    }*/
 
 
     

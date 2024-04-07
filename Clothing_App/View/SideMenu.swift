@@ -20,16 +20,7 @@ struct SideMenu: View {
                 
                 Spacer()
                 
-               /* Button(action: {
-                    isShowing = false
-                }) {
-                    HStack {
-                        Image(systemName: "person")
-                        Text("Profile")
-                    }
-                    .padding()
-                    .foregroundColor(.black)
-                    .background()*/
+               
                 NavigationLink(destination: Profile_settings(), isActive: $isProfile) {
                     HStack {
                         Image(systemName: "person")
@@ -39,26 +30,8 @@ struct SideMenu: View {
                     .foregroundColor(.black)
                 }.offset(y: -480)
                 
-                Button(action: {
-                    isShowing = false
-                }) {
-                    HStack {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-                    .padding()
-                    .foregroundColor(.black)
-                    
-                }.offset(y:-480)
-               /* Button(action: {
-                    isShowing = false
-                }) {
-                    HStack {
-                        Image(systemName: "bag")
-                        Text("Add Cart")
-                    }
-                    .padding()
-                    .foregroundColor(.black)*/
+              
+               
                 NavigationLink(destination: CartView(), isActive: $isCart) {
                     HStack {
                         Image(systemName: "bag")

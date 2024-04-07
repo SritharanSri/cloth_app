@@ -12,11 +12,7 @@ struct Clothing_AppApp: App {
     @ObservedObject var locationManager = LocationManager.shared
     var body: some Scene {
         WindowGroup {
-          /*  if locationManager.userLocation == nil {
-            LocationView()
-            } else {
-           HomeView()
-            }*/
+         
             HomeView()
         }
     }

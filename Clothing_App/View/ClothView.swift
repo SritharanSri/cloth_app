@@ -52,10 +52,13 @@ struct ClothView: View {
                 
                 HStack {
                     Button(action:{
-                        guard let product = viewModel.products.first(where: { $0.id == productID }) else { return }
-                        let cartItem = CartModel(product: product.id, quantity: 1, price: product.price)
-                        cartViewModel.saveCartItem(cartItem)
-                        showAlert = true
+                        
+                            if let product = viewModel.products.first(where: { $0.id == productID }) {
+                                let cartItem = CartModel(product: product.productName, quantity: 1, price: product.price, image: product.image)
+                                cartViewModel.saveCartItem(cartItem) // Add cart item to the cart
+                                cartViewModel.saveCartItemsToLocalStorage() // Save cart items to local storage
+                                showAlert = true
+                            }
                     }) {
                         Text("Add to Cart")
                             .font(.system(size: 20))
@@ -69,9 +72,7 @@ struct ClothView: View {
                         Alert(title: Text("Added to Cart"), message: Text("This item has been added to your cart."), dismissButton: .default(Text("OK")))
                     }
                     
-                    Button(action:{
-                        // Buy button action
-                    }) {
+                    NavigationLink(destination: PaymentView(total:product.price)) {
                         Text("Buy")
                             .font(.system(size: 20))
                             .foregroundColor(.white)
