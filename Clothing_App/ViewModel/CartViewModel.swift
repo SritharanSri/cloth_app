@@ -30,7 +30,7 @@ class CartViewModel: ObservableObject {
             }
         }.resume()
     }
-    
+   
     func saveCartItem(_ cartItem: CartModel) {
         guard let url = URL(string: APIConstantsCart.postURL) else {
             print("Invalid URL")
@@ -60,6 +60,7 @@ class CartViewModel: ObservableObject {
             print("Error encoding cart item: \(error)")
         }
     }
+
 
     
   

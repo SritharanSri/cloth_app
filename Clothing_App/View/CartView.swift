@@ -14,15 +14,7 @@ struct CartView: View {
     var body: some View {
         VStack{
             VStack{
-                HStack{
-                    
-                        Image(systemName: "chevron.left")
-                        .frame(width: 50,height: 50)
-                    Spacer()
-                    
-                    Text("Cart Details").font(.title2).offset(x:-30)
-                    Spacer()
-                }.padding()
+                    Text("Cart Details").font(.title2)
             }
             Spacer()
             

@@ -25,15 +25,10 @@ struct Profile_settings: View {
     
     var body: some View {
         VStack{
-            HStack{
-                
-                    Image(systemName: "chevron.left")
-                    .frame(width: 50,height: 50).background(Color.white).cornerRadius(10)
-                Spacer()
-                
+            
                 Text("Profile Details").font(.title2)
                 Spacer()
-            }.padding()
+            
         }
         Spacer()
         VStack {
@@ -74,7 +69,7 @@ struct Profile_settings: View {
                         }.offset(x: 30, y: -65)
                          
                     }
-                }
+        }.offset(y:-50)
                 .sheet(isPresented: $isShowingPicker) {
                     ImagePicker(images: $selectedImages)
                 }
@@ -92,59 +87,7 @@ struct Profile_settings: View {
                                             .stroke(Color.gray, lineWidth: 1) // Border color and width
                                     ).padding(.leading,20).padding(.trailing,20)
                 
-                HStack(spacing: 10){
-                    VStack{
-                        Text("Gender").font(.system(size: 15)).foregroundColor(Color.gray).padding(.leading,-50)
-                        VStack {
-                            TextField("Gender", text: $selectedGender).disabled(true).frame(width: 160,height: 40)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .overlay(
-                                                    RoundedRectangle(cornerRadius: 8)
-                                                        .stroke(Color.gray, lineWidth: 1) // Border color and width
-                                                ).padding(.leading,20)
-                                                
-                                                VStack {
-                                                    ForEach(genders, id: \.self) { gender in
-                                                        Button(action: {
-                                                            selectedGender = gender
-                                                            isDropdownExpanded.toggle()
-                                                        }) {
-                                                            Text(gender).foregroundColor(.black)
-                                                        }.frame(width:150)
-                                                         .background(Color.white)
-                                                    }.background(Color.white)
-                                                }
-                                                .cornerRadius(8)
-                                                .shadow(radius: 2)
-                                                .opacity(isDropdownExpanded ? 1 : 0) // Set opacity based on expansion state
-                                                .animation(.easeInOut) // Add animation
-                        }.padding(.leading,-15)
-                                            .onTapGesture {
-                                                isDropdownExpanded.toggle()
-                                            }
-                                        }
-                                        .padding(.horizontal, -5)
-                                        .zIndex(isDropdownExpanded ? 1 : 0)
-                                        
-                                        Spacer()
-                    VStack{
-                        Text("Date of Birth").font(.system(size: 15)).foregroundColor(Color.gray)
-                        
-                        DatePicker(
-                                           "",
-                                           selection: $birthDate,
-                                           displayedComponents: [.date]
-                                       )
-                        .frame(width: 160, height: 40)
-                                       
-                                       .overlay(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .stroke(Color.gray, lineWidth: 1) // Border color and width
-                                    )
-                    }.padding(.bottom,65).padding(.horizontal,-30)
-                    Spacer()
-                }.padding(.horizontal, 20)
-                Spacer()
+               
                 
                 VStack{
                     HStack{
@@ -158,7 +101,7 @@ struct Profile_settings: View {
                                                 .stroke(Color.gray, lineWidth: 1) // Border color and width
                                         ).padding(.leading,20).padding(.trailing,20)
                     Spacer()
-                }.padding(.vertical,-65)
+                }
                 
                 VStack{
                     HStack{
@@ -172,8 +115,62 @@ struct Profile_settings: View {
                                                 .stroke(Color.gray, lineWidth: 1) // Border color and width
                                         ).padding(.leading,20).padding(.trailing,20)
                 Spacer()
-                }.padding(.vertical,-90)
-            }
+                }
+            
+            HStack(spacing: 10){
+                VStack{
+                    Text("Gender").font(.system(size: 15)).foregroundColor(Color.gray).padding(.leading,-50)
+                    VStack {
+                        TextField("Gender", text: $selectedGender).disabled(true).frame(width: 160,height: 40)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .overlay(
+                                                RoundedRectangle(cornerRadius: 8)
+                                                    .stroke(Color.gray, lineWidth: 1) // Border color and width
+                                            ).padding(.leading,20)
+                                            
+                                            VStack {
+                                                ForEach(genders, id: \.self) { gender in
+                                                    Button(action: {
+                                                        selectedGender = gender
+                                                        isDropdownExpanded.toggle()
+                                                    }) {
+                                                        Text(gender).foregroundColor(.black)
+                                                    }.frame(width:150)
+                                                     .background(Color.white)
+                                                }.background(Color.white)
+                                            }
+                                            .cornerRadius(8)
+                                            .shadow(radius: 2)
+                                            .opacity(isDropdownExpanded ? 1 : 0) // Set opacity based on expansion state
+                                            .animation(.easeInOut) // Add animation
+                    }.padding(.leading,-15)
+                                        .onTapGesture {
+                                            isDropdownExpanded.toggle()
+                                        }
+                                    }
+                                    
+                                    .zIndex(isDropdownExpanded ? 1 : 0)
+                                    
+                                    Spacer()
+                VStack{
+                    Text("Date of Birth").font(.system(size: 15)).foregroundColor(Color.gray)
+                    
+                    DatePicker(
+                                       "",
+                                       selection: $birthDate,
+                                       displayedComponents: [.date]
+                                   )
+                    .frame(width: 160, height: 40)
+                                   
+                                   .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.gray, lineWidth: 1) // Border color and width
+                                )
+                }.offset(x:-50,y:-40)
+                
+            }.offset(x:20)
+            
+            }.offset(y:-40)
             Button(action:{
                 
             }){
@@ -185,7 +182,7 @@ struct Profile_settings: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                
-            }
+            }.offset(y:-20)
         }
     }
 }

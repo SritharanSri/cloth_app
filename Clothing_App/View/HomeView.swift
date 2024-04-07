@@ -10,63 +10,7 @@ import URLImage
 
 
 
-/*struct ProductView: View {
-    let product: Product
-    @State private var isShowing = false
-    @State private var selectedItem = 0
-    
-    @StateObject var viewModel: ProductViewModel = ProductViewModel()
-    var body: some View {
-      
-            VStack(alignment: .leading) {
-                Image(product.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 150)
-                    .cornerRadius(10)
-                
-                Text(product.name)
-                    .font(.title2)
-                    .bold()
-                    .padding(.top, 8)
-                
-                Text(product.category)
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                
-                Text(product.description)
-                    .font(.caption2)
-                    .foregroundColor(.gray)
-                    .padding(.top, 8)
-                
-                HStack {
-                    Text("$ \(product.price, specifier: "%.2f")")
-                        .font(.title2)
-                        .bold()
-                    
-                    Spacer()
-                    
-                    Button(action: {}) {
-                        Text("Add to Cart")
-                            .font(.caption2)
-                            .bold()
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(Color(.systemBlue))
-                            .foregroundColor(.white)
-                            .cornerRadius(5)
-                    }
-                }
-                .padding(.top, 16)
-            }
-            .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(10)
-            
-       
-    }
-    }
-    */
+
 struct HomeView: View {
     @State private var isEditing = false
     @State private var search: String = ""
@@ -90,13 +34,7 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        /*Button(action: {}) {
-                            Image(systemName: "bag")
-                                .resizable()
-                                .frame(width: 22, height: 22)
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.leading, 10)*/
+                    
                         NavigationLink(destination: CartView()) {
                             Image(systemName: "bag")
                                 .resizable()
@@ -183,6 +121,16 @@ struct HomeView: View {
                                                 .foregroundColor(.white)
                                                 .cornerRadius(5)
                                         }
+                                       /* NavigationLink(destination: CartView()) {
+                                            Text("Add to Cart")
+                                                .font(.caption2)
+                                                .bold()
+                                                .padding(.horizontal, 16)
+                                                .padding(.vertical, 8)
+                                                .background(Color(.systemBlue))
+                                                .foregroundColor(.white)
+                                                .cornerRadius(5)
+                                        }*/
                                     }
                                     
                                 }
